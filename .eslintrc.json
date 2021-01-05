@@ -1,29 +1,41 @@
 {
     "env": {
-        "es6": true,
-        "node": true,
-        "jest": true
+        "browser": true,
+        "es2021": true
     },
     "extends": [
-        "standard"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
     "plugins": [
+        "react",
         "@typescript-eslint"
     ],
     "rules": {
-      "@typescript-eslint/camelcase": "off",
-      "@typescript-eslint/interface-name-prefix": ["error",{ "prefixWithI":"always"}],
-      "no-unused-vars":"off",
-      "camelcase":"off",
-      "no-useless-constructor": "off"
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
     }
 }
